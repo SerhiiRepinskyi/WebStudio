@@ -1,0 +1,237 @@
+/* -----backdrop + modal----- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity var(--tra), visibility var(--tra);
+}
+
+.backdrop.is-hidden {
+  opacity: 0; /* - невидимий елемент */
+  visibility: hidden; /* - припинить роботу фокусів на модалці */
+  pointer-events: none; /* - на елемент не діють ніякі події */
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform var(--tra), border-radius var(--tra), box-shadow var(--tra);
+  padding: 40px;
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--primary-white-color);
+  border-radius: 4px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5) rotate(-360deg);
+  border-radius: 50%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  color: black;
+  background-color: var(--primary-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  /* outline: transparent; */
+
+  transition: background-color var(--tra), color var(--tra);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+/* -----modal-form----- */
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  color: var(--title-text-color);
+
+  margin-bottom: 12px;
+}
+
+.modal-form {
+  /* max-width: 448px; */
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+}
+
+.form-field {
+  position: relative;
+
+  margin-bottom: 10px;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  color: #000000;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  background-color: transparent;
+  outline: transparent;
+
+  transition: border-color var(--tra);
+
+  &:focus {
+    border-color: var(--accent-color);
+  }
+  &:not(:focus):not(:placeholder-shown):invalid {
+    border: 1px solid rgba(235, 16, 16, 0.781);
+  }
+}
+
+.form-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: fill var(--tra);
+
+  .form-input:focus + & {
+    fill: var(--accent-color);
+  }
+}
+
+.form-comment {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  resize: none;
+
+  background-color: transparent;
+  outline: transparent;
+
+  transition: border-color var(--tra);
+
+  &:focus {
+    border-color: var(--accent-color);
+  }
+
+  &::placeholder {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+/* -----checkbox----- */
+.form-checkbox {
+  /* скритий чекбокс преремістив під іконку */
+  position: absolute;
+  left: 25px;
+  top: 10px;
+
+  /* скидає повністю зовнішній вигляд у браузері */
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; */
+}
+
+.checkbox-label {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  font-size: 14px;
+  line-height: calc(24 / 14);
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  fill: transparent;
+
+  transition: background-color var(--tra), border var(--tra), box-shadow var(--tra), fill var(--tra),
+    border-color var(--tra);
+
+  .form-checkbox:checked + & {
+    background-color: var(--accent-color);
+    border: none;
+    box-shadow: none;
+    fill: var(--primary-white-color);
+  }
+
+  .form-checkbox:focus + & {
+    border-color: var(--accent-color);
+  }
+}
+
+.checkbox-label .checkbox-policy {
+  display: block;
+  margin-left: 7px;
+  text-decoration: underline;
+
+  color: var(--accent-color);
+}
+
+.modal .btn-primary {
+  width: 200px;
+
+  display: block;
+  margin: 0 auto;
+}

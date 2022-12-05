@@ -1,0 +1,32 @@
+.btn-secondary {
+  cursor: pointer;
+
+  padding: 6px 22px;
+
+  color: var(--title-text-color);
+  background-color: #f5f4fa;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  letter-spacing: 0.03em;
+
+  border: none;
+  /* border: 1px solid transparent; */
+  border-radius: 4px;
+
+  transition: color var(--tra), background-color var(--tra), box-shadow var(--tra);
+
+  &:hover,
+  &:focus {
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.btn-secondary--all {
+  padding: 6px 25px;
+}
