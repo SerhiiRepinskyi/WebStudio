@@ -1,11 +1,19 @@
 .feature__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
 .feature__item {
   display: block;
-  width: calc((100% - 90px) / 4);
+  width: 100%;
+
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 90px) / 4);
+  }
 }
 
 .feature__icon-wrap {

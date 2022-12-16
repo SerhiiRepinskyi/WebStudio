@@ -1,8 +1,14 @@
 .filters-list {
-  margin-bottom: 50px;
   display: flex;
   gap: 8px;
   justify-content: center;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
 }
 
 .grid-portfolio {
@@ -12,7 +18,15 @@
 }
 
 .grid-portfolio__item {
-  /* width: calc((100% - 60px) / 3); - можна не використовувати при gap */
+  width: 100%;
+  
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @include desktop {
+    width: calc((100% - 60px) / 3);
+  }
 }
 
 .project__link {

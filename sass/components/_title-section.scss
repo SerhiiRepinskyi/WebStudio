@@ -1,6 +1,11 @@
 .title-section {
   color: var(--title-text-color);
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: calc(33 / 28);
   text-align: center;
+
+@include desktop {
+    font-size: 36px;
+    line-height: calc(42 / 36);
+  }
 }

@@ -1,19 +1,118 @@
 .header {
+  position: relative;
+
   border-bottom: 1px solid #ececec;
 }
 
 .header__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__logo {
-  margin-right: 93px;
+  @media screen and (max-width: 767px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 92px;
+  }
 }
 
+/* ------mobile-menu-button----- */
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.icon-cross {
+  fill: currentColor;
+}
+
+.menu-button .icon-cross {
+  display: none;
+}
+.menu-button.is-open .icon-cross {
+  display: block;
+}
+.menu-button.is-open .icon-menu {
+  display: none;
+}
+
+.menu-container {
+  background-color: #ffffff;
+
+  @media screen and (max-width: 767px) {
+    width: 100vw;
+    height: 100vh;
+    max-width: 480px;
+    padding: 48px 40px;
+
+    z-index: 1;
+    overflow: scroll;
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50%;
+    width: 100%;
+
+    &.is-open {
+      display: block;
+    }
+  }
+
+  // @media screen and (max-width: 767px) {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+}
+/* --------------------------- */
+
 .menu {
-  display: flex;
-  gap: 50px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    margin-bottom: 306px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 50px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
 .menu__link {
@@ -48,26 +147,44 @@
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 40px;
+    line-height: calc(47 / 40);
   }
 }
 
 .contacts {
-  display: flex;
-  gap: 50px;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 32px;
+    margin-bottom: 64px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    gap: 50px;
+  }
 }
 
 .header__contacts {
-  margin-left: auto;
+  // margin-left: auto;
 }
 
 .contacts__link {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -81,8 +198,73 @@
   &:focus {
     color: var(--accent-color);
   }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+    line-height: calc(28 / 24);
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.contacts__link--tel {
+  @media screen and (max-width: 767px) {
+    color: var(--accent-color);
+    font-size: 34px;
+    line-height: calc(40 / 34);
+  }
 }
 
 .contacts__icon {
   fill: currentColor;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.mob-soc {
+  display: flex;
+  // column-gap: 20px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mob-soc__link {
+  color: var(--accent-color);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.mob-soc__item {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+  &:nth-child(1) {
+    padding-left: 0;
+  }
+
+  &:nth-child(4) {
+    padding-right: 0;
+    border-right: none;
+  }
 }

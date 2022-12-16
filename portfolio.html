@@ -26,35 +26,92 @@
         <a class="logo header__logo" href="./index.html"
           >Web<span class="logo-part--color-dark">Studio</span></a
         >
+        <button
+          type="button"
+          class="menu-button"
+          aria-expanded="false"
+          aria-controls="menu-container"
+          data-menu-button
+        >
+          <svg width="40" height="40" aria-label="Перемикач мобільного меню">
+            <use class="icon-cross" href="./images/icons.svg#icon-cross"></use>
+            <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
 
-        <nav class="navigation">
-          <ul class="menu">
-            <li class="menu__item"><a href="./index.html" class="menu__link">Студія</a></li>
-            <li class="menu__item">
-              <a href="./portfolio.html" class="menu__link current">Портфоліо</a>
-            </li>
-            <li class="menu__item"><a href="#" class="menu__link">Контакти</a></li>
-          </ul>
-        </nav>
+        <div class="menu-container" id="menu-container" data-menu>
+          <nav class="header__nav">
+            <ul class="menu">
+              <li class="menu__item">
+                <a href="./index.html" class="menu__link">Студія</a>
+              </li>
+              <li class="menu__item">
+                <a href="./portfolio.html" class="menu__link current">Портфоліо</a>
+              </li>
+              <li class="menu__item"><a href="#" class="menu__link">Контакти</a></li>
+            </ul>
+          </nav>
 
-        <ul class="contacts header__contacts">
-          <li class="contacts__item">
-            <a class="contacts__link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com</a
-            >
-          </li>
-          <li class="contacts__item">
-            <a class="contacts__link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+          <div class="header-contacts-wrap">
+            <ul class="contacts header__contacts">
+              <li class="contacts__item">
+                <a class="contacts__link" href="mailto:info@devstudio.com">
+                  <svg class="contacts__icon" width="16" height="12">
+                    <use href="./images/icons.svg#icon-envelope"></use>
+                  </svg>
+                  info@devstudio.com</a
+                >
+              </li>
+              <li class="contacts__item">
+                <a class="contacts__link contacts__link--tel" href="tel:+380961111111">
+                  <svg class="contacts__icon" width="10" height="16">
+                    <use href="./images/icons.svg#icon-smartphone"></use>
+                  </svg>
+                  +38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+
+            <ul class="mob-soc">
+              <li class="mob-soc__item">
+                <a
+                  class="mob-soc__link"
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Instagram</a
+                >
+              </li>
+              <li class="mob-soc__item">
+                <a
+                  class="mob-soc__link"
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Twitter</a
+                >
+              </li>
+              <li class="mob-soc__item">
+                <a
+                  class="mob-soc__link"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Facebook</a
+                >
+              </li>
+              <li class="mob-soc__item">
+                <a
+                  class="mob-soc__link"
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -87,14 +144,30 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project1.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project1.jpg 1x, ./images/project1-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project1-tablet.jpg 1x, ./images/project1-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project1-mobil.jpg 1x, ./images/project1-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project1-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -109,12 +182,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project2.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project2.jpg 1x, ./images/project2-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project2-tablet.jpg 1x, ./images/project2-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project2-mobil.jpg 1x, ./images/project2-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project2-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aspernatur
                       totam maxime molestias porro labore sed? Aliquid rerum adipisci nulla? Itaque
@@ -135,12 +222,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project3.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project3.jpg 1x, ./images/project3-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project3-tablet.jpg 1x, ./images/project3-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project3-mobil.jpg 1x, ./images/project3-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project3-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate architecto
                       quia porro consequatur maxime corrupti libero soluta, nulla enim numquam
@@ -159,12 +260,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project4.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project4.jpg 1x, ./images/project4-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project4-tablet.jpg 1x, ./images/project4-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project4-mobil.jpg 1x, ./images/project4-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project4-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe beatae
                       suscipit quos fugit maxime. Expedita ex pariatur repellendus nobis quia fugiat
@@ -183,12 +298,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project5.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project5.jpg 1x, ./images/project5-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project5-tablet.jpg 1x, ./images/project5-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project5-mobil.jpg 1x, ./images/project5-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project5-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi fugit,
                       aspernatur laudantium ex hic culpa dignissimos vel, asperiores earum
@@ -207,12 +336,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project6.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project6.jpg 1x, ./images/project6-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project6-tablet.jpg 1x, ./images/project6-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project6-mobil.jpg 1x, ./images/project6-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project6-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, temporibus!
                       Architecto quasi doloremque temporibus iure, ut deleniti. Deserunt, neque
@@ -231,14 +374,30 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project7.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project7.jpg 1x, ./images/project7-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project7-tablet.jpg 1x, ./images/project7-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project7-mobil.jpg 1x, ./images/project7-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project7-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae nobis distinctio officia veritatis quisquam nostrum, velit tempore dolorum. Cumque, dolorem similique.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas molestiae
+                      nobis distinctio officia veritatis quisquam nostrum, velit tempore dolorum.
+                      Cumque, dolorem similique.
                     </p>
                   </div>
                   <div class="project__card">
@@ -253,12 +412,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project8.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project8.jpg 1x, ./images/project8-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project8-tablet.jpg 1x, ./images/project8-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project8-mobil.jpg 1x, ./images/project8-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project8-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum at quam
                       ad. Impedit tenetur quidem itaque quaerat ipsa quasi sequi quia nesciunt.
@@ -276,12 +449,26 @@
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
-                    <img
-                      class="thumb__image"
-                      src="./images/project9.jpg"
-                      alt="Проект"
-                      width="370"
-                    />
+                    <picture class="thumb__image">
+                      <source
+                        srcset="./images/project9.jpg 1x, ./images/project9-2x.jpg 2x"
+                        media="(min-width: 1200px)"
+                      />
+                      <source
+                        srcset="./images/project9-tablet.jpg 1x, ./images/project9-tablet-2x.jpg 2x"
+                        media="(min-width: 768px)"
+                      />
+                      <source
+                        srcset="./images/project9-mobil.jpg 1x, ./images/project9-mobil-2x.jpg 2x"
+                        media="(max-width: 767px)"
+                      />
+                      <img
+                        class="thumb__image"
+                        src="./images/project9-mobil.jpg"
+                        alt="Проект"
+                        width="450"
+                      />
+                    </picture>
                     <p class="thumb__overlay">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nemo
                       expedita ipsam quasi illo iure, nostrum sint quidem labore saepe. Fuga, sequi!
@@ -301,63 +488,85 @@
 
     <footer class="footer">
       <div class="container footer__container">
-        <div class="footer__logo-address-wrap">
-          <a class="logo footer__logo" href="./index.html"
-            >Web<span class="logo-part--color-light">Studio</span></a
-          >
-          <address class="address">
-            <ul class="address__list">
-              <li class="address__item">
+        <div class="footer-top-wrap">
+          <div class="footer__logo-address-wrap">
+            <a class="logo footer__logo" href="./index.html"
+              >Web<span class="logo-part--color-light">Studio</span></a
+            >
+            <address class="address">
+              <ul class="address__list">
+                <li class="address__item">
+                  <a
+                    class="address__link-address"
+                    href="https://goo.gl/maps/nndKzAuQ2RMjYdHf6"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    >м. Київ, пр-т Лесі Українки, 26</a
+                  >
+                </li>
+                <li class="address__item">
+                  <a href="mailto:info@devstudio.com" class="address__link">info@devstudio.com</a>
+                </li>
+                <li class="address__item">
+                  <a href="tel:+380961111111" class="address__link">+38 096 111 11 11</a>
+                </li>
+              </ul>
+            </address>
+          </div>
+
+          <div class="social footer__social">
+            <p class="social__title">приєднуйтесь</p>
+            <ul class="social__list">
+              <li class="social__item">
                 <a
-                  class="address__link-address"
-                  href="https://goo.gl/maps/nndKzAuQ2RMjYdHf6"
+                  class="social__link"
+                  href="https://www.instagram.com"
                   target="_blank"
                   rel="noreferrer noopener"
-                  >м. Київ, пр-т Лесі Українки, 26</a
                 >
+                  <svg class="social__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="address__item">
-                <a href="mailto:info@devstudio.com" class="address__link">info@devstudio.com</a>
+              <li class="social__item">
+                <a
+                  class="social__link"
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg class="social__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="address__item">
-                <a href="tel:+380961111111" class="address__link">+38 096 111 11 11</a>
+              <li class="social__item">
+                <a
+                  class="social__link"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg class="social__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a
+                  class="social__link"
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <svg class="social__icon" width="20" height="20">
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
-        </div>
-
-        <div class="social footer__social">
-          <p class="social__title">приєднуйтесь</p>
-          <ul class="social__list">
-            <li class="social__item">
-              <a class="social__link" href="#" target="_blank" rel="noreferrer noopener">
-                <svg class="social__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link" href="#" target="_blank" rel="noreferrer noopener">
-                <svg class="social__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link" href="#" target="_blank" rel="noreferrer noopener">
-                <svg class="social__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link" href="#" target="_blank" rel="noreferrer noopener">
-                <svg class="social__icon" width="20" height="20">
-                  <use href="./images/icons.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
 
         <div class="form-wrap footer__form-wrap">
@@ -375,10 +584,6 @@
               <label for="footer-email" class="footer-form__label">E-mail</label>
             </div>
 
-            <!-- <label class="footer-input-label">
-              <input type="email" class="footer-input" name="email" placeholder="E-mail" />
-            </label> -->
-
             <button class="btn-primary footer-form__btn-primary" type="submit">
               Підписатися
               <svg class="footer-btn-icon" width="24" height="24">
@@ -389,5 +594,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

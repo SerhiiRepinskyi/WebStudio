@@ -4,3 +4,8 @@ body {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.03em;
 }
+
+/* - коли на bodi клас modal-open від js (при відкритому модальному вікні) */
+body.modal-open {
+  overflow: hidden;
+}
