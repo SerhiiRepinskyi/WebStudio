@@ -79,7 +79,11 @@
     width: 100%;
 
     &.is-open {
-      display: block;
+      // display: block;
+      display: flex;
+
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 
@@ -103,8 +107,6 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-
-    margin-bottom: 306px;
   }
 
   @media screen and (min-width: 768px) {
