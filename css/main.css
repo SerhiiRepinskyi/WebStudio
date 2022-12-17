@@ -1182,8 +1182,7 @@ body.modal-open {
   gap: 10px;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 200px;
+  width: 200px;
 }
 
 .footer-btn-icon {
