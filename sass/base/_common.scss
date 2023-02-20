@@ -5,7 +5,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* - коли на bodi клас modal-open від js (при відкритому модальному вікні) */
-body.modal-open {
+/* - коли на bodi клас show-modal від js (при відкритому модальному вікні) */
+body.show-modal {
   overflow: hidden;
 }

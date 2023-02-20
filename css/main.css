@@ -56,8 +56,8 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* - коли на bodi клас modal-open від js (при відкритому модальному вікні) */
-body.modal-open {
+/* - коли на bodi клас show-modal від js (при відкритому модальному вікні) */
+body.show-modal {
   overflow: hidden;
 }
 
@@ -181,35 +181,44 @@ body.modal-open {
 }
 
 /* -----backdrop + modal----- */
+body.show-modal .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
 .backdrop {
   position: fixed;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 10;
   overflow-y: scroll;
   transition: opacity var(--tra), visibility var(--tra);
-}
-
-.backdrop.is-hidden {
   opacity: 0; /* - невидимий елемент */
   visibility: hidden; /* - припинить роботу фокусів на модалці */
   pointer-events: none; /* - на елемент не діють ніякі події */
-  padding: 93px 15px 94px; /* - відступи в бекдропі для моб. версії */
+}
+
+body.show-modal .modal {
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  border-radius: 4px;
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transform: translate(-50%, -50%) scale(0.7) rotate(360deg);
   transition: transform var(--tra), border-radius var(--tra), box-shadow var(--tra);
   padding: 40px;
   width: 528px;
+  border-radius: 50%;
   background-color: var(--primary-white-color);
-  border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 1199px) {
@@ -217,11 +226,6 @@ body.modal-open {
     width: calc(100% - 30px);
     max-width: 450px;
   }
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.5) rotate(-360deg);
-  border-radius: 50%;
 }
 
 .modal-close {
@@ -293,9 +297,6 @@ body.modal-open {
 .form-input:not(:focus):not(:-moz-placeholder-shown):invalid {
   border: 1px solid rgba(235, 16, 16, 0.781);
 }
-.form-input:not(:focus):not(:-ms-input-placeholder):invalid {
-  border: 1px solid rgba(235, 16, 16, 0.781);
-}
 .form-input:not(:focus):not(:placeholder-shown):invalid {
   border: 1px solid rgba(235, 16, 16, 0.781);
 }
@@ -327,12 +328,6 @@ body.modal-open {
   border-color: var(--accent-color);
 }
 .form-comment::-moz-placeholder {
-  font-size: 12px;
-  line-height: 1.1666666667;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-.form-comment:-ms-input-placeholder {
   font-size: 12px;
   line-height: 1.1666666667;
   letter-spacing: 0.01em;
@@ -1135,9 +1130,6 @@ body.modal-open {
 .footer-form__input:not(:focus):not(:-moz-placeholder-shown):invalid {
   border: 1px solid rgba(235, 16, 16, 0.781);
 }
-.footer-form__input:not(:focus):not(:-ms-input-placeholder):invalid {
-  border: 1px solid rgba(235, 16, 16, 0.781);
-}
 .footer-form__input:not(:focus):not(:placeholder-shown):invalid {
   border: 1px solid rgba(235, 16, 16, 0.781);
 }
@@ -1162,10 +1154,6 @@ body.modal-open {
   transition: transform var(--tra), color var(--tra);
 }
 .footer-form__input:not(:-moz-placeholder-shown) + .footer-form__label {
-  transform: translateY(-44px);
-  color: var(--accent-color);
-}
-.footer-form__input:not(:-ms-input-placeholder) + .footer-form__label {
   transform: translateY(-44px);
   color: var(--accent-color);
 }
