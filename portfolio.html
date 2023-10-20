@@ -123,31 +123,21 @@
 
           <ul class="filters-list">
             <li>
-              <button
-                type="button"
-                class="btn-secondary btn-secondary--all"
-                onclick="filterProjects('all')"
-              >
+              <button type="button" class="btn-secondary btn-secondary--all" data-category="all">
                 Усі
               </button>
             </li>
             <li>
-              <button type="button" class="btn-secondary" onclick="filterProjects('web')">
-                Веб-сайти
-              </button>
+              <button type="button" class="btn-secondary" data-category="web">Веб-сайти</button>
             </li>
             <li>
-              <button type="button" class="btn-secondary" onclick="filterProjects('app')">
-                Додатки
-              </button>
+              <button type="button" class="btn-secondary" data-category="app">Додатки</button>
             </li>
             <li>
-              <button type="button" class="btn-secondary" onclick="filterProjects('design')">
-                Дизайн
-              </button>
+              <button type="button" class="btn-secondary" data-category="design">Дизайн</button>
             </li>
             <li>
-              <button type="button" class="btn-secondary" onclick="filterProjects('marketing')">
+              <button type="button" class="btn-secondary" data-category="marketing">
                 Маркетинг
               </button>
             </li>
@@ -609,19 +599,6 @@
       </div>
     </footer>
     <script src="./js/menu.js"></script>
-
-    <script>
-      function filterProjects(category) {
-        const projects = document.querySelectorAll('.grid-portfolio__item');
-        projects.forEach(project => {
-          const projectCategory = project.getAttribute('data-category');
-          if (category === 'all' || category === projectCategory) {
-            project.style.display = 'block';
-          } else {
-            project.style.display = 'none';
-          }
-        });
-      }
-    </script>
+    <script src="./js/filter.js"></script>
   </body>
 </html>
