@@ -123,24 +123,38 @@
 
           <ul class="filters-list">
             <li>
-              <button type="button" class="btn-secondary btn-secondary--all">Усі</button>
+              <button
+                type="button"
+                class="btn-secondary btn-secondary--all"
+                onclick="filterProjects('all')"
+              >
+                Усі
+              </button>
             </li>
             <li>
-              <button type="button" class="btn-secondary">Веб-сайти</button>
+              <button type="button" class="btn-secondary" onclick="filterProjects('web')">
+                Веб-сайти
+              </button>
             </li>
             <li>
-              <button type="button" class="btn-secondary">Додатки</button>
+              <button type="button" class="btn-secondary" onclick="filterProjects('app')">
+                Додатки
+              </button>
             </li>
             <li>
-              <button type="button" class="btn-secondary">Дизайн</button>
+              <button type="button" class="btn-secondary" onclick="filterProjects('design')">
+                Дизайн
+              </button>
             </li>
             <li>
-              <button type="button" class="btn-secondary">Маркетинг</button>
+              <button type="button" class="btn-secondary" onclick="filterProjects('marketing')">
+                Маркетинг
+              </button>
             </li>
           </ul>
 
           <ul class="grid-portfolio">
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="web">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -165,7 +179,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -176,7 +192,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="design">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -201,7 +217,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -212,7 +230,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="app">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -237,7 +255,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -248,7 +268,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="marketing">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -273,7 +293,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -284,7 +306,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="app">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -309,7 +331,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -320,7 +344,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="web">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -345,7 +369,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -356,7 +382,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="design">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -381,7 +407,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -392,7 +420,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="marketing">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -417,7 +445,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -428,7 +458,7 @@
               </article>
             </li>
 
-            <li class="grid-portfolio__item">
+            <li class="grid-portfolio__item" data-category="app">
               <article class="project">
                 <a href="#" class="project__link">
                   <div class="thumb">
@@ -453,7 +483,9 @@
                       />
                     </picture>
                     <p class="thumb__overlay">
-                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи приватну особу.
+                      Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
+                      Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
+                      приватну особу.
                     </p>
                   </div>
                   <div class="project__card">
@@ -577,5 +609,19 @@
       </div>
     </footer>
     <script src="./js/menu.js"></script>
+
+    <script>
+      function filterProjects(category) {
+        const projects = document.querySelectorAll('.grid-portfolio__item');
+        projects.forEach(project => {
+          const projectCategory = project.getAttribute('data-category');
+          if (category === 'all' || category === projectCategory) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      }
+    </script>
   </body>
 </html>
